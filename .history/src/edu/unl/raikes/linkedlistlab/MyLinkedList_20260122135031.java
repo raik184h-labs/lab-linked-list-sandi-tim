@@ -216,9 +216,7 @@ public class MyLinkedList<E> implements List<E> {
 
     @Override
     public boolean remove(Object obj) {
-		if (indexOf(obj) == -1) {
-			return false;
-		} else if (equals(remove(indexOf(obj)), obj)) {
+		if (equals(remove(indexOf(obj)), obj)) {
 			return true;
 		}
 

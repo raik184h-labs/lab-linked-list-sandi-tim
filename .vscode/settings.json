@@ -10,5 +10,6 @@
     ".cursorignore": true,
     ".cursorindexingignore": true,
     ".cursorrules": true
-  }
+  },
+  "java.debug.settings.onBuildFailureProceed": true
 }

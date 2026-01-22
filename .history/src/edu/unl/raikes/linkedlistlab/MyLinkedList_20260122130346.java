@@ -17,7 +17,7 @@ import java.util.ListIterator;
 public class MyLinkedList<E> implements List<E> {
     
     /**
-     * Node is identical to ListNode from the example, but parameterized with T.
+     * Node is identical to ListNode from the example, but parameterized with T
      * 
      * @author downey
      *
@@ -79,25 +79,14 @@ public class MyLinkedList<E> implements List<E> {
             for ( ; node.next != null; node = node.next) {}
             node.next = new Node(element);
         }
-        this.size++;
+        size++;
         return true;
     }
 
     @Override
     public void add(int index, E element) {
-        if (index == 0) {
-            head = new Node(element, head);
-        } else {
-            Node node = head;
-            // loop until index - 1
-            for (int i = 0; i < index - 1; i++) {
-                node = node.next;
-            }
-            node.next = new Node(element, node.next);
-        }
-        this.size++;
+        // TODO: fill this in
     }
-        
 
     @Override
     public boolean addAll(Collection<? extends E> collection) {
@@ -157,11 +146,7 @@ public class MyLinkedList<E> implements List<E> {
 
     @Override
     public int indexOf(Object target) {
-        for (int i = 0; i < this.size; i++) {
-            if (this.equals(target, this.get(i))) {
-                return i;
-            }
-        }
+        // TODO: fill this in
         return -1;
     }
 
@@ -216,34 +201,14 @@ public class MyLinkedList<E> implements List<E> {
 
     @Override
     public boolean remove(Object obj) {
-		if (indexOf(obj) == -1) {
-			return false;
-		} else if (equals(remove(indexOf(obj)), obj)) {
-			return true;
-		}
-
+        // TODO: fill this in
         return false;
     }
 
     @Override
     public E remove(int index) {
-		Node node = head;
-		E element;
-
-		if (index == 0) {
-			element = this.get(0);
-			head = head.next;
-		} 
-		else {
-			for (int i = 0; i < index - 1; i++) {
-				node = node.next;
-			}
-			element = this.get(index);
-			node.next = node.next.next;
-		}
-
-		size--;
-        return element;
+        // TODO: fill this in
+        return null;
     }
 
     @Override

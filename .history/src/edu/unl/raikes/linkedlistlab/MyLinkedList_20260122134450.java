@@ -216,9 +216,7 @@ public class MyLinkedList<E> implements List<E> {
 
     @Override
     public boolean remove(Object obj) {
-		if (indexOf(obj) == -1) {
-			return false;
-		} else if (equals(remove(indexOf(obj)), obj)) {
+		if (remove(indexOf(obj)) == obj) {
 			return true;
 		}
 
@@ -228,21 +226,14 @@ public class MyLinkedList<E> implements List<E> {
     @Override
     public E remove(int index) {
 		Node node = head;
-		E element;
-
-		if (index == 0) {
-			element = this.get(0);
-			head = head.next;
-		} 
-		else {
-			for (int i = 0; i < index - 1; i++) {
-				node = node.next;
-			}
-			element = this.get(index);
-			node.next = node.next.next;
+		for (int i = 0; i < index - 1; i++) {
+			node = node.next;
 		}
+		E element = this.get(index);
+		node.next = null;
+		node.next = node.next;
 
-		size--;
+
         return element;
     }
 
